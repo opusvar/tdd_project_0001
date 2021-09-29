@@ -18,7 +18,7 @@ class DocTestDouble:
     """
 
     def __init__(self, sent, ents):
-        self.ents = [SpanTestDouble(ent['text'], ent['label_'] for ents in ents)]
+        self.ents = [SpanTestDouble(ent['text'], ent['label_']) for ents in ents]
 
 class SpanTestDouble:
     
