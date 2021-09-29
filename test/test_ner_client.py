@@ -18,7 +18,7 @@ class TestNERClient(unittest.TestCase):
         ner = NamedEntityClient(model)
         ents = ner.get_ents("Madison is a city in Wisconsin")
         self.assertIsInstance(ents, dict)
-
+# 44:38 - https://www.youtube.com/watch?v=eAPmXQ0dC7Q
     def test_get_ents_given_spacy_PERSON_is_returned_serializes_to_Person(self):
         model = NerModelTestDouble('eng')
         doc_ents = [{'text': 'Laurent Fressient', 'label_':'PERSON'}]
