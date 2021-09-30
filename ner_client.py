@@ -13,7 +13,8 @@ class NamedEntityClient:
     def map_label(label):
         label_map = {
             'PERSON': 'Person',
-            'NORP': 'Group'
+            'NORP': 'Group',
+            'LOC': "Location"
         }
 
         return label_map.get(label)
