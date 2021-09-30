@@ -14,7 +14,9 @@ class NamedEntityClient:
         label_map = {
             'PERSON': 'Person',
             'NORP': 'Group',
-            'LOC': "Location"
+            'LOC': 'Location',
+            'LANG': 'Language',
+            'GPE': 'Geo-Political Entity'
         }
 
         return label_map.get(label)
