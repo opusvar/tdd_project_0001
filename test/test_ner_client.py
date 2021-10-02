@@ -48,7 +48,7 @@ class TestNERClient(unittest.TestCase):
 
     def test_get_ents_given_spacy_LANGUAGE_is_returned_serializes_to_location(self):
         model = NerModelTestDouble('eng')
-        doc_ents = [{'text': 'ASL', 'label_':'LANGUAGE'}]
+        doc_ents = [{'text': 'ASL', 'label_':'LANG'}]
         model.returns_doc_ents(doc_ents)
         ner = NamedEntityClient(model)
         result = ner.get_ents('...')
@@ -64,6 +64,15 @@ class TestNERClient(unittest.TestCase):
         expected_result = { 'ents': [{'ent': 'New York', 'label': 'Geo-Political Entity'}], 'html': ''}
         self.assertListEqual(result['ents'], expected_result['ents'])
 
-    
+    def test_get_ents_given_multiple_ents_serializes_all(self):
+        model = NerModelTestDouble('eng')
+        doc_ents = [{'text': 'ASL', 'label_':'LANG'}, {'text': 'Judith Polgar', 'label_': 'PERSON'}]
+        model.returns_doc_ents(doc_ents)
+        ner = NamedEntityClient(model)
+        result = ner.get_ents('...')
+        expected_result = { 'ents': 
+            [{'ent': 'ASL', 'label': 'Language'}, 
+                {'ent': 'Judith Polgar', 'label': 'Person'}], 'html': ''}
+        self.assertListEqual(result['ents'], expected_result['ents'])
 
     
