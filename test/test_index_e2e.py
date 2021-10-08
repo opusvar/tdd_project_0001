@@ -15,3 +15,10 @@ class E2ETests(unittest.TestCase):
 
     def test_browser_title_contains_app_name(self):
         self.assertIn('Named Entity', self.driver.title)
+
+    def test_page_heading_is_named_enity_finder(self):
+        heading = self._find("heading").text
+        self.assertEqual('Named Entity Finder', heading)
+
+    def _find(self, val):
+        return self.driver.find_element_by_css_selector(f"[data-test-id='{val}']")

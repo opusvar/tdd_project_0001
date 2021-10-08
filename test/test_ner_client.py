@@ -1,7 +1,7 @@
 import unittest
 from unittest.case import expectedFailure
 from ner_client import NamedEntityClient
-from test_doubles import NerModelTestDouble
+from .test_doubles import NerModelTestDouble
 
 class TestNERClient(unittest.TestCase):
 
