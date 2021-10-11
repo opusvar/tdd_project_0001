@@ -24,5 +24,17 @@ class E2ETests(unittest.TestCase):
         input_element = self._find('input-text')
         self.assertIsNotNone(input_element)
 
+    def test_page_has_button_for_submitting_text(self):
+        submit_button = self._find('find-button')
+        self.assertIsNotNone(submit_button)
+
+    def test_page_has_ner_table(self):
+        input_element = self._find('input-text')
+        submit_button = self._find('find-button')
+        input_element.send_keys("France and Germany share a border in Europe.")
+        submit_button.click()
+        table = self._find("ner-table")
+        self.assertIsNotNone(table)
+
     def _find(self, val):
         return self.driver.find_element_by_css_selector(f"[data-test-id='{val}']")
