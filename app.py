@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request
+import json
+
 
 app = Flask(__name__)
 
@@ -6,7 +8,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/ner')
+@app.route('/ner', methods=['POST'])
 def get_named_ents():
     data = request.get_json()
     response = True
