@@ -16,4 +16,4 @@ class TestApi(unittest.TestCase):
             response = client.post('/ner', json={"sentence": "Kamala Harris"})
             assert response._status_code == 200
             data = json.loads(response.get_data())
-            assert len(data['entities'] > 0)
+            assert len(data['entities']) > 0
