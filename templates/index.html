@@ -7,25 +7,36 @@
     <title>Named Entity Finder</title>
 </head>
 <body>
-    <h1 id="heading" data-test-id="heading">
-        Named Entity Finder
-    </h1>
+    <div class="container p-3" id="app">
 
-    <input type="text" id="input-text" data-test-id="input-text" class="form-control">
-    <button class="btn btn-outline-primary" type="button" id="find-button" data-test-id="find-button">
-        Find Named Entities
-    </button>
-    <table id="ner-table" class="table table-bordered" data-test-id="ner-table">
-        <thead class="thead dark">
-            <tr>
-                <th>Entity</th>
-                <th>Type</th>
-            </tr>
-        </thead>
-        <tbody>
+            <div class="row my-4"> 
+                <h1 id="heading" data-test-id="heading">
+                    Named Entity Finder
+                </h1>
+            </div>
+        
+            <div class="row my-3">
+                <div id="labeled-doc" data-test-id="labeled-doc">
+                </div>
+            </div>
 
-        </tbody>
-    </table>    
-    
+            <input type="text" id="input-text" data-test-id="input-text" class="form-control">
+            <button class="btn btn-outline-primary" type="button" id="find-button" data-test-id="find-button">
+                Find Named Entities
+            </button>
+
+            <table id="ner-table" class="table table-bordered" data-test-id="ner-table">
+                <thead class="thead dark">
+                    <tr>
+                        <th>Entity</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div> 
 </body>
 </html>
